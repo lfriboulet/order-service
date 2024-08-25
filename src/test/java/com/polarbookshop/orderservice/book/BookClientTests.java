@@ -1,6 +1,5 @@
 package com.polarbookshop.orderservice.book;
 
-
 import java.io.IOException;
 
 import okhttp3.mockwebserver.MockResponse;
@@ -46,14 +45,14 @@ class BookClientTests {
         var mockResponse = new MockResponse()
                 .addHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                 .setBody("""
-                        	{
-                        		"isbn": %s,
-                        		"title": "Title",
-                        		"author": "Author",
-                        		"price": 9.90,
-                        		"publisher": "Polarsophia"
-                        	}
-                        """.formatted(bookIsbn));
+							{
+								"isbn": %s,
+								"title": "Title",
+								"author": "Author",
+								"price": 9.90,
+								"publisher": "Polarsophia"
+							}
+						""".formatted(bookIsbn));
 
         mockWebServer.enqueue(mockResponse);
 
